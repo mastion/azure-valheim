@@ -1,0 +1,4 @@
+#git add --renormalize .
+
+# set non-bianary files to lf line endings
+* text=auto elo=lf
