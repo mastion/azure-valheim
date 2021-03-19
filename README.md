@@ -21,5 +21,6 @@ https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/
 
  - https://github.com/lloesche/valheim-server-docker
  - https://github.com/julie-ng/azure-terraform-cli
+ - https://github.com/benc-uk/terraform-mgmt-bootstrap
  - https://www.reddit.com/r/valheim/comments/ln8jqv/valheim_dedicated_server_running_in_azure/
  

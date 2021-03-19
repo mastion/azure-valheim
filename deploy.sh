@@ -29,7 +29,7 @@ if [ $? -ne 0 ]; then
 fi
 
 export SUB_NAME=$(az account show --query name -o tsv)
-if [[ -z $SUB_NAME ]]; then
+if [[ -z "$SUB_NAME" ]]; then
   echo -e "\n\e[31m»»» ⚠️ You are not logged in to Azure!"
   exit
 fi

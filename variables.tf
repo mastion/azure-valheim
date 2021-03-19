@@ -17,3 +17,8 @@ variable "prefix" {
   type        = string
   description = "Prefix appended to all resources"
 }
+
+variable "valheim_password" {
+  type        = string
+  description = "Password for valheim server. At least 5 characters."
+}
