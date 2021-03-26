@@ -23,18 +23,18 @@ resource "azurerm_storage_account" "state_storage" {
   allow_blob_public_access = false
 }
 
-resource "azurerm_storage_share" "example" {
-  name                 = "aci-test-share"
+resource "azurerm_storage_share" "config" {
+  name                 = "valhiemconfig"
   storage_account_name = azurerm_storage_account.state_storage.name
   quota                = 50
 }
 
-resource "azurerm_container_group" "example" {
-  name                = "example-continst"
+resource "azurerm_container_group" "valhiem" {
+  name                = "valheim"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   ip_address_type     = "public"
-  dns_name_label      = "aci-label"
+  dns_name_label      = "az-valheim"
   os_type             = "Linux"
 
   container {
@@ -61,10 +61,10 @@ resource "azurerm_container_group" "example" {
     }
 
     volume {
-      name       = "logs"
-      mount_path = "/aci/logs"
+      name       = "config"
+      mount_path = "/config"
       read_only  = false
-      share_name = azurerm_storage_share.example.name
+      share_name = azurerm_storage_share.config.name
 
       storage_account_name = azurerm_storage_account.state_storage.name
       storage_account_key  = azurerm_storage_account.state_storage.primary_access_key
